@@ -2,16 +2,17 @@
 Este projeto implementa um modelo de aprendizado de máquina para detectar transações fraudulentas com cartões de crédito. Ele utiliza o algoritmo Random Forest, técnicas de pré-processamento de dados, validação cruzada, ajuste de threshold e visualizações úteis para análise de desempenho.
 
 📂 Estrutura do Projeto
+bash
+Copy code
 credit-card-fraud-detector/
 ├── data/
-│   └── creditcard.csv             # Dataset original (Kaggle)
-├── data_exploration.ipynb         # Código principal do projeto
+│   └── creditcard.csv         # Dataset original (Kaggle)
+├── data_exploration.ipynb     # Código principal do projeto
 ├── outputs/
-│   ├── rf_model.joblib            # Modelo treinado (opcional)
-│   └── scaler.joblib              # Scaler treinado (opcional)
-└── README.md
+│   ├── rf_model.joblib        # Modelo treinado (opcional)
+│   └── scaler.joblib          # Scaler treinado (opcional)
+├── README.md
 └── requirements.txt
-
 ⚙️ Tecnologias e Bibliotecas
 pandas, numpy
 
@@ -22,19 +23,23 @@ matplotlib, seaborn
 joblib
 
 🚀 Passo a Passo
-1. Instale as dependências:
+Instale as dependências:
+
+bash
+Copy code
 pip install -r requirements.txt
+Certifique-se de que o arquivo creditcard.csv esteja no diretório data/.
+Você pode baixar o dataset em:
+Kaggle - Credit Card Fraud Detection
 
-2. Certifique-se de que o arquivo creditcard.csv esteja no diretório data/.
-Você pode baixar o dataset em: Kaggle - Credit Card Fraud Detection: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+Execute o script principal:
+(No caso, o notebook)
 
-3. Execute o script principal:
-python main.py
-
-
+bash
+Copy code
+jupyter notebook data_exploration.ipynb
 📊 Descrição do Pipeline
-Carregamento e pré-processamento:
-
+🔹 Carregamento e pré-processamento:
 Leitura do dataset .csv
 
 Remoção da coluna id (se existir)
@@ -43,16 +48,14 @@ Separação entre variáveis explicativas (features) e variável alvo (Class)
 
 Normalização das features com StandardScaler
 
-Modelagem:
-
+🔹 Modelagem:
 Treinamento de um modelo RandomForestClassifier com hiperparâmetros ajustados
 
 Aplicação de validação cruzada (5-fold) com métrica f1-score
 
 Ajuste do limiar de decisão (threshold = 0.4)
 
-Avaliação:
-
+🔹 Avaliação:
 Exibição do relatório de classificação
 
 Matriz de confusão com seaborn
@@ -75,9 +78,10 @@ O projeto está preparado para lidar com desbalanceamento de classes, utilizando
 💾 Salvando o Modelo
 Para salvar o modelo e o scaler treinado, adicione ao final do script:
 
+python
+Copy code
 joblib.dump(rf_model, 'outputs/rf_model.joblib')
 joblib.dump(scaler, 'outputs/scaler.joblib')
-
 🔮 Possíveis Melhorias Futuras
 Implementar comparação com outros modelos (XGBoost, LightGBM, etc.)
 
@@ -88,3 +92,4 @@ Automatização do tuning de hiperparâmetros
 Criação de API com Flask ou FastAPI para deploy
 
 Dashboard com Streamlit para análise interativa
+
