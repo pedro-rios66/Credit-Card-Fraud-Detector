@@ -99,3 +99,10 @@ joblib.dump(scaler, 'outputs/scaler.joblib')
 - Automatização do tuning de hiperparâmetros
 - Criação de API com Flask ou FastAPI para deploy
 - Dashboard com Streamlit para análise interativa
+
+## Licença
+Este projeto está licenciado sob a MIT License.
+---
+
+## Autor
+Projeto desenvolvido por Pedro Rios.
